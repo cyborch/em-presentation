@@ -1,0 +1,32 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const {DATA,SOURCE} = require('../data.js');
+const source = name => JSON.parse(fs.readFileSync(path.join(__dirname,'../sources',name)));
+const prices=source('entsoe-price-tables.json'),gen=source('entsoe-generation-tables.json'),load=source('entsoe-load-tables.json');
+assert.equal(DATA.length,288);
+assert.equal(new Set(DATA.map(d=>d.time)).size,288);
+for (const [i,d] of DATA.entries()) {
+ const row=i%96+1;
+ assert.equal(d.index,i);
+ assert.equal(d.price,Number(prices[d.day][row][1]),`Sequence 1 at ${d.time}`);
+ assert.equal(d.solar,Number((Number(gen[d.day][row][18])/1000).toFixed(5)));
+ assert.equal(d.wind,Number(((Number(gen[d.day][row][20])+Number(gen[d.day][row][21]))/1000).toFixed(5)));
+ assert.equal(d.demand,Number((Number(load[d.day][row][2])/1000).toFixed(5)));
+ assert(Math.abs(d.residual-(d.demand-d.solar-d.wind))<1e-8);
+ assert.equal(Date.parse(d.endTime)-Date.parse(d.time),900000);
+ if(i) assert.equal(Date.parse(d.time)-Date.parse(DATA[i-1].time),900000);
+ assert.equal(d.illustrative,false);
+ for(const k of ['price','solar','wind','demand','residual']) assert(Number.isFinite(d[k]));
+}
+assert.equal(DATA[49].price,0);
+assert.equal(DATA[145].price,103.49);
+assert.equal(DATA[224].price,348.30);
+assert.equal(DATA[271].price,740.01);
+assert.equal(Math.max(...DATA.filter(d=>d.day===14 && d.hour<12).map(d=>d.price)),348.30);
+assert.equal(Math.max(...DATA.map(d=>d.price)),740.01);
+assert.equal(Math.min(...DATA.map(d=>d.price)),-0.48);
+assert.equal(SOURCE.resolutionMinutes,15);
+assert.equal(DATA[0].time,'2026-09-12T00:00:00+02:00');
+assert.equal(DATA[287].endTime,'2026-09-15T00:00:00+02:00');
+console.log('PASS: all 288 intervals reconcile to the captured source tables; units, timestamps, residuals, extrema and case anchors verified.');

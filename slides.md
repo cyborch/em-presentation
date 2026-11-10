@@ -107,6 +107,8 @@ What I would do if I were to actually implement this?
 Everything you see (including these slides - written in [sli.dev](https://sli.dev) ) is pretty much vibe-coded.
 It takes A good amount of human-in-the-loop to make something production-ready.
 
+* Local minima/maxima detection
+* Trend-change detection
 * Backend-for-frontend - slim frontend at the cost of tighter coupling
 * Human-built APIs and models
 * Human built core components

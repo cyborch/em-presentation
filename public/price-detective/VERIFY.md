@@ -1,17 +1,25 @@
-# Verification
+# Verification — ENTSO-E edition
 
-Checked November 6, 2026.
+Checked November 10, 2026.
 
-- JavaScript syntax checks passed for app.js and data.js.
-- Data checks passed: 72 consecutive hourly timestamps with explicit UTC+2 offset; residual arithmetic; all values within the fixed plot scales; four narrative anchors.
-- Browser checked at desktop width and 390px mobile width. No horizontal overflow at 390px; mobile SVG uses its own 360-unit viewBox for readable labels.
-- Guided flow advanced through solar, wind, demand, residual and evening comparison.
-- September 12/13 midday comparison: price 0/96 EUR/MWh; solar 34/33 GW; wind 22.4/7.5 GW; demand 52.8/52.8 GW; residual −3.6/12.3 GW.
-- September 14 07:00/19:00 comparison: price 350/735 EUR/MWh; residual 43.4/53.1 GW.
-- Arbitrary A/B selection, identical-hour feedback and swap checked.
-- Keyboard slider advances the shared hour and chart readouts.
-- All six hypothesis options are selectable; hypothesis and notes persist across reload. Reset clears them and returns to price-only comparison.
-- Download action produced price-detective-investigation.json.
-- No browser JavaScript errors were reported in the inspected console.
+## Data
 
-Scope: checks performed in the available desktop browser, with responsive viewport testing. No full cross-browser, assistive-technology or real-device certification. Chart hover and click are complemented by a keyboard/touch slider. Real market-data validation is intentionally out of scope. Font loading is optional.
+- Captured the public ENTSO-E tables for each of September 12, 13 and 14, 2026 in the DE-LU bidding zone, with the CET/CEST display setting.
+- 96 quarter-hour rows per day in each of the price, generation and load datasets.
+- All 288 records reconcile to Sequence 1 price, solar, offshore + onshore wind, and Actual Total Load cells in the preserved source tables.
+- Continuous ISO timestamps with UTC+2 offset, no duplicate or missing intervals, and correct midnight boundaries.
+- MW-to-GW conversion and derived residual arithmetic verified independently against the source cells.
+- Negative minimum −€0.48/MWh retained. September 14 morning maximum €348.30 at 08:00; three-day maximum €740.01 at 19:45.
+- `node scripts/verify-data.cjs` passes; JavaScript syntax check passes.
+
+## Pattern detection and interface
+
+- Detector tests pass for strict extrema, plateaus, flat series, monotonic data, incomplete boundaries, missing prices and time gaps.
+- Existing dataset yields 10 local minima, 7 local maxima, 34 non-overlapping one-hour rises and 39 non-overlapping one-hour falls.
+- The lowest local minimum is September 12 at 14:00 (−€0.48/MWh); highest local maximum September 14 at 19:45 (€740.01/MWh).
+- Browser checked: switching pattern types, selecting a second occurrence, synchronized evidence, automatic comparison windows, previous-day preset and generic guide retaining the selected pattern.
+- The largest rise compares September 14 18:15 to 19:15: €306.36 to €700.07/MWh, a €393.71 increase.
+- Mobile 390px: occurrence picker usable with no horizontal page overflow; unavailable previous-day comparison reports the boundary without changing A/B.
+- No browser JavaScript errors reported in the inspected session.
+
+Scope: the underlying ENTSO-E data is unchanged. Detection is descriptive, not an anomaly-significance model. Date-independent pattern logic is reusable for regularly sampled series; the surrounding app still uses this dataset’s source information, electricity units and timezone.

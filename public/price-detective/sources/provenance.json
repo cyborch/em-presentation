@@ -1,0 +1,20 @@
+{
+  "generation": "https://transparency.entsoe.eu/generation/actual/perType/generation?appState=%7B%22sa%22%3A%5B%22BZN%7C10Y1001A1001A82H%22%5D%2C%22st%22%3A%22BZN%22%2C%22mm%22%3Atrue%2C%22ma%22%3Afalse%2C%22sp%22%3A%22HALF%22%2C%22dt%22%3A%22TABLE%22%2C%22df%22%3A%5B%222026-09-12%22%2C%222026-09-12%22%5D%2C%22tz%22%3A%22CET%22%2C%22ii%22%3Anull%2C%22ps%22%3Anull%7D",
+  "load": "https://transparency.entsoe.eu/load/total/dayAhead?appState=%7B%22sa%22%3A%5B%22BZN%7C10Y1001A1001A82H%22%5D%2C%22st%22%3A%22BZN%22%2C%22mm%22%3Atrue%2C%22ma%22%3Afalse%2C%22sp%22%3A%22HALF%22%2C%22dt%22%3A%22TABLE%22%2C%22df%22%3A%5B%222026-09-13%22%2C%222026-09-14%22%5D%2C%22tz%22%3A%22CET%22%2C%22ii%22%3Anull%2C%22ps%22%3Anull%7D",
+  "accessed": "2026-11-10",
+  "area": "BZN|10Y1001A1001A82H",
+  "timeZoneSetting": "CET/CEST",
+  "generationNote": "Published actual generation may include measured, planning and extrapolated data; subject to settlement updates.",
+  "price": "https://transparency.entsoe.eu/market/energyPrices?appState=%7B%22sa%22%3A%5B%22BZN%7C10Y1001A1001A82H%22%5D%2C%22st%22%3A%22BZN%22%2C%22mm%22%3Atrue%2C%22ma%22%3Afalse%2C%22sp%22%3A%22HALF%22%2C%22dt%22%3A%22TABLE%22%2C%22df%22%3A%222026-09-12%22%2C%22tz%22%3A%22CET%22%2C%22ii%22%3A0%2C%22ps%22%3A100%7D",
+  "priceSeries": "Sequence 1 \u2014 SDAC day-ahead",
+  "resolutionMinutes": 15,
+  "timezone": "Europe/Berlin (CEST, UTC+2 for these dates)",
+  "units": {
+    "price": "EUR/MWh",
+    "fundamentals": "GW (source MW / 1000)"
+  },
+  "wind": "Wind Offshore + Wind Onshore",
+  "residual": "Actual Total Load \u2212 Solar \u2212 Wind Offshore \u2212 Wind Onshore",
+  "status": "Published ENTSO-E data; derived wind and residual load; no synthetic values",
+  "analysisLimit": "Actual generation and load are retrospective outcomes, not the forecasts available at the day-ahead auction. They do not establish price causation."
+}
