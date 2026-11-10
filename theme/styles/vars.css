@@ -1,0 +1,59 @@
+/* Tokens sampled from electricitymaps.com/solutions/power-markets */
+:root {
+  --em-black: #0a0a0a;
+  --em-ink: #111111;
+  --em-text-muted: #676560;
+  --em-text-faint: #8c8c8c;
+  --em-border: #dedcd8;
+  --em-surface: #f1f0ee;
+  --em-surface-warm: #ebe7e1;
+  --em-white: #ffffff;
+
+  --em-indigo: #818bff;
+  --em-indigo-soft: #c3c7ff;
+  --em-green: #90e86d;
+  --em-green-deep: #0b6b3c;
+  --em-coral: #e36d78;
+  --em-yellow: #e8c32d;
+  --em-orange: #ffbf81;
+  --em-blue: #0099ff;
+
+  --em-radius-sm: 8px;
+  --em-radius-md: 12px;
+  --em-radius-lg: 20px;
+  --em-radius-pill: 999px;
+
+  --em-bg: var(--em-white);
+  --em-fg: var(--em-ink);
+  --em-fg-muted: var(--em-text-muted);
+  --em-line: var(--em-border);
+  --em-card: var(--em-surface);
+
+  --slidev-theme-primary: var(--em-indigo);
+  --slidev-slide-container-background: var(--em-black);
+
+  --slidev-code-background: var(--em-surface);
+  --slidev-code-foreground: var(--em-ink);
+  --slidev-code-font-family: 'Fragment Mono', ui-monospace, monospace;
+  --slidev-code-font-size: 13px;
+  --slidev-code-line-height: 20px;
+  --slidev-code-padding: 14px 18px;
+  --slidev-code-radius: var(--em-radius-md);
+  --slidev-code-tab-divider: var(--em-border);
+  --slidev-code-tab-text-color: var(--em-text-muted);
+  --slidev-code-tab-active-text-color: var(--em-ink);
+}
+
+html.dark {
+  --em-bg: var(--em-black);
+  --em-fg: var(--em-white);
+  --em-fg-muted: #a8a6a0;
+  --em-line: #3b3b38;
+  --em-card: #1c1c1c;
+
+  --slidev-code-background: #141414;
+  --slidev-code-foreground: #f2f2f2;
+  --slidev-code-tab-divider: #3b3b38;
+  --slidev-code-tab-text-color: #a8a6a0;
+  --slidev-code-tab-active-text-color: var(--em-white);
+}

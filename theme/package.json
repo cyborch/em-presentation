@@ -1,0 +1,23 @@
+{
+  "name": "slidev-theme-electricitymaps",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Slidev theme based on the Electricity Maps power markets page",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "slidev": ">=v0.47.0"
+  },
+  "slidev": {
+    "colorSchema": "light",
+    "defaults": {
+      "fonts": {
+        "sans": "Inter",
+        "mono": "Fragment Mono",
+        "weights": "300,400,500,600,700"
+      }
+    }
+  }
+}

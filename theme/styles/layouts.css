@@ -1,0 +1,252 @@
+.slidev-layout {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  background: var(--em-bg);
+  color: var(--em-fg);
+  -webkit-font-smoothing: antialiased;
+  padding-top: 4rem;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--em-fg);
+  }
+
+  h1 {
+    font-size: 2.9rem;
+    margin: 0 0 1rem -0.04em;
+  }
+
+  h2 {
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    margin-top: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+  }
+
+  /* Eyebrow label: uppercase mono, as used for section captions on the site */
+  h5,
+  h6,
+  .eyebrow {
+    font-family: 'Fragment Mono', ui-monospace, monospace;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--em-fg-muted);
+    opacity: 1;
+    margin: 0 0 0.75rem;
+  }
+
+  h1 + p,
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--em-fg-muted);
+    margin: -0.25rem 0 1.25rem;
+    opacity: 1;
+  }
+
+  p,
+  li {
+    letter-spacing: -0.005em;
+  }
+
+  ul > li::marker {
+    color: var(--em-indigo);
+  }
+
+  ol > li::marker {
+    color: var(--em-fg-muted);
+    font-feature-settings: 'tnum';
+  }
+
+  a {
+    color: inherit;
+    border-bottom: 1px solid var(--em-indigo);
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  a:hover {
+    background: color-mix(in srgb, var(--em-indigo) 18%, transparent);
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--em-line);
+    margin: 1.5rem 0;
+  }
+
+  blockquote {
+    border: 0;
+    border-left: 3px solid var(--em-indigo);
+    background: transparent;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    color: var(--em-fg);
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+  }
+
+  :not(pre) > code {
+    background: var(--em-card);
+    border-radius: 6px;
+    padding: 0.1em 0.4em;
+    font-size: 0.85em;
+    color: var(--em-fg);
+  }
+
+  kbd {
+    font-family: 'Fragment Mono', ui-monospace, monospace;
+    font-size: 0.75em;
+    border: 1px solid var(--em-line);
+    border-bottom-width: 2px;
+    border-radius: 6px;
+    padding: 0.1em 0.45em;
+    background: var(--em-bg);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  th {
+    font-family: 'Fragment Mono', ui-monospace, monospace;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--em-fg-muted);
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--em-line);
+  }
+
+  td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--em-line);
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+}
+
+/* Layouts that always render on a black canvas */
+.slidev-layout.dark-canvas {
+  --em-bg: var(--em-black);
+  --em-fg: var(--em-white);
+  --em-fg-muted: #a8a6a0;
+  --em-line: #3b3b38;
+  --em-card: #1c1c1c;
+}
+
+/* Cover / intro */
+.slidev-layout.cover,
+.slidev-layout.intro {
+  display: grid;
+  height: 100%;
+  padding: 2.5rem 3.5rem;
+
+  h1 {
+    font-size: 5rem;
+    letter-spacing: -0.06em;
+    line-height: 0.98;
+    margin-left: -0.05em;
+  }
+
+  h1 + p {
+    font-size: 1.5rem;
+    max-width: 38rem;
+  }
+}
+
+/* Section / end */
+.slidev-layout.section,
+.slidev-layout.end {
+  display: grid;
+  height: 100%;
+
+  h1 {
+    font-size: 4.5rem;
+    letter-spacing: -0.06em;
+    line-height: 1;
+  }
+}
+
+/* Statement / fact / quote */
+.slidev-layout.statement {
+  display: grid;
+  height: 100%;
+
+  h1 {
+    font-size: 3.6rem;
+    letter-spacing: -0.05em;
+    line-height: 1.02;
+  }
+}
+
+.slidev-layout.fact {
+  display: grid;
+  height: 100%;
+
+  h1 {
+    font-size: 8rem;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 + p {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+.slidev-layout.quote {
+  display: grid;
+  height: 100%;
+
+  blockquote {
+    font-size: 2.2rem;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* Slide chrome */
+.em-chrome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 3.5rem;
+  pointer-events: none;
+  color: var(--em-text-muted);
+  font-family: 'Fragment Mono', ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
