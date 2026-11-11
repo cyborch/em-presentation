@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id);
-const metrics={solar:{name:'Solar generation',short:'Solar',color:'#c68a23',icon:'☀',hint:'How does output change around this pattern?'},wind:{name:'Wind generation',short:'Wind',color:'#4d88b5',icon:'≈',hint:'What else is supplying the grid?'},demand:{name:'Electricity demand',short:'Demand',color:'#89729d',icon:'⌁',hint:'How much electricity is needed?'},residual:{name:'Residual load',short:'Residual load',color:'#c96348',icon:'Δ',hint:'Demand − wind − solar'}};
+const metrics={solar:{name:'Solar generation',short:'Solar',color:'#c68a23',icon:'☀',hint:''},wind:{name:'Wind generation',short:'Wind',color:'#4d88b5',icon:'≈',hint:''},demand:{name:'Electricity demand',short:'Demand',color:'#89729d',icon:'⌁',hint:''},residual:{name:'Residual load',short:'Residual load',color:'#c96348',icon:'Δ',hint:''}};
 const patternTypes={
  minimum:{title:'Local minimum',question:'What changes around this low point? Compare the lead-in and recovery.',definition:'Lower than every other price in the 60 minutes before and after. Equal-price plateaus count once.',rank:'Lowest price first'},
  maximum:{title:'Local maximum',question:'What changes around this high point? Compare the build-up and decline.',definition:'Higher than every other price in the 60 minutes before and after. Equal-price plateaus count once.',rank:'Highest price first'},

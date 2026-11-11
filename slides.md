@@ -57,7 +57,7 @@ prices behave the way they do.
 
 After getting the actual challenge I did a bit of research.
 
-<div class="grid gap-3 mt-4 text-sm" style="grid-template-columns: repeat(3, 1fr) 1.5fr 1fr">
+<div class="grid gap-3 mt-4 text-sm" style="grid-template-columns: repeat(3, 1fr) 1fr 1fr">
   <div class="p-3 rounded border border-primary/20 bg-primary/10">
     <div class="text-xs opacity-60 mb-1">Trader dashboard<br/><br/></div>
     <Lightbox><img class="aspect-4/3" src="./trader-dashboard.jpg" alt="Trader dashboard"></Lightbox>
@@ -72,6 +72,12 @@ After getting the actual challenge I did a bit of research.
     <div class="text-xs opacity-60 mb-1">Forecast sentiment and alerts</div>
     <Lightbox><img class="aspect-4/3" src="./alerts.jpg" alt="Forecast sentiment and alerts"></Lightbox>
   </div>
+
+  <div class="p-3 rounded border border-primary/20 bg-primary/10">
+    <div class="text-xs opacity-60 mb-1">Fortune telling<br/><br/></div>
+    <Lightbox><img class="aspect-4/3" style="width: 100%"  src="./fortune.jpg" alt="Fortune telling"></Lightbox>
+  </div>
+
 </div>
 
 <div class="text-xs light-grey mt-5 mb-5">
@@ -81,11 +87,11 @@ matches their behaviour best?
 </div>
 
 <div class="text-xs light-grey">
-<ul>
-  <li>Day-traders - <em>those who care about by-the-minute updates</em></li>
-  <li>Meterologists - <em>those who care about long term</em></li>
-  <li>CSI - <em>those who what to know what went wrong</em></li>
-</ul>
+
+* Day-traders - *those who care about by-the-minute updates*
+* Meterologists - *those who care about long term*
+* CSI - *those who what to know what went wrong*
+
 </div>
 
 ---
@@ -104,14 +110,17 @@ What I would do if I were to actually implement this?
 
 <div class="text-sm mb-5">
 
-Everything you see (including these slides - written in [sli.dev](https://sli.dev) ) is pretty much vibe-coded.
-It takes A good amount of human-in-the-loop to make something production-ready.
+Everything you see (including these slides - written in [sli.dev](https://sli.dev)) is pretty much vibe-coded.
+It takes a good amount of human-in-the-loop to build something production-ready.
 
 * Local minima/maxima detection
 * Trend-change detection
 * Backend-for-frontend - slim frontend at the cost of tighter coupling
-* Human-built APIs and models
-* Human built core components
+* APIs and models
+* Core components
+
+Only then:
+
 * Claude (or similar) for glueing the pieces together
 
 </div>
